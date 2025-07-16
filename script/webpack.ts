@@ -8,6 +8,9 @@ const configuration: Configuration = {
 		filename: "bundle.js",
 		path: resolve("./public/"),
 	},
+	resolve: {
+		extensions: [".js", ".ts"],
+	},
 	module: {
 		rules: [
 			{
