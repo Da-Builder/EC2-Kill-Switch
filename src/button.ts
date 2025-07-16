@@ -63,7 +63,10 @@ document
 		dismissAlert();
 
 		try {
-			const instances = await fetchEC2();
+			const instances = (await fetchEC2()).filter(
+				(instance) => instance.state === "stopped"
+			);
+
 			if (instances.length === 0) {
 				showSuccessAlert();
 				return;
@@ -72,9 +75,7 @@ document
 			const client = new EC2Client(getConfiguration());
 			await client.send(
 				new StartInstancesCommand({
-					InstanceIds: instances
-						.filter((instance) => instance.state === "stopped")
-						.map((instance) => instance.id),
+					InstanceIds: instances.map((instance) => instance.id),
 				})
 			);
 
@@ -95,7 +96,10 @@ document
 		dismissAlert();
 
 		try {
-			const instances = await fetchEC2();
+			const instances = (await fetchEC2()).filter(
+				(instance) => instance.state === "running"
+			);
+
 			if (instances.length === 0) {
 				showSuccessAlert();
 				return;
@@ -104,9 +108,7 @@ document
 			const client = new EC2Client(getConfiguration());
 			await client.send(
 				new StopInstancesCommand({
-					InstanceIds: instances
-						.filter((instance) => instance.state === "running")
-						.map((instance) => instance.id),
+					InstanceIds: instances.map((instance) => instance.id),
 				})
 			);
 
