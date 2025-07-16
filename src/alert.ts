@@ -25,3 +25,7 @@ export function showSuccessAlert(): void {
 
 	alert?.classList.remove(displayNone);
 }
+
+document.querySelectorAll(alertSelector).forEach((element) => {
+	element.addEventListener("click", dismissAlert);
+});
