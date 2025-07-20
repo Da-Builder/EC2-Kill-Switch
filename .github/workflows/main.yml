@@ -1,5 +1,5 @@
 name: Deploy Page
-run-name: Deploy Page by @{{ github.actor }}
+run-name: Deploy Page by @${{ github.actor }}
 
 on:
   workflow_dispatch:
