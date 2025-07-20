@@ -3,14 +3,11 @@
 		"build": "webpack --config ./script/webpack.ts"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ec2": "^3.844.0"
+		"@aws-sdk/client-ec2": "^3.848.0"
 	},
 	"devDependencies": {
-		"@types/node": "^24.0.14",
-		"@types/webpack": "^5.28.5",
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.8.3",
 		"webpack": "^5.100.2",
 		"webpack-cli": "^6.0.1"
 	}
