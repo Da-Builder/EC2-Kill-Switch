@@ -6,7 +6,7 @@ const configuration: Configuration = {
 	entry: "./src/main.ts",
 	output: {
 		filename: "bundle.js",
-		path: resolve("./build/"),
+		path: resolve("./public/"),
 	},
 	resolve: {
 		extensions: [".js", ".ts"],
